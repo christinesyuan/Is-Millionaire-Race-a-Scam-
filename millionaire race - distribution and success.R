@@ -21,6 +21,8 @@ for (i in 1:18) {
 
 data_frame <- data.frame("Room" = 1:19, "Independent Room Failure" = fail, "Distribution of Room Failure" = round(fail_at_room, 10), "Room Success" = round(success_at_room, 10), check.names = F)
 
+
+
 ## Chi-Squared Goodness of Fit Test
 
 data <- c(2, 2, 5, 3, 5, 3, 6, 8, 3, 8, 5, 5, 6, 4, 6, 4, 2, 7, 6, 8, 6, 5, 7, 4, 5, 2, 10, 6, 7, 4, 2, 4, 3, 6, 3, 9, 8, 3, 5, 8, 6) # which room i failed at, n = 41
