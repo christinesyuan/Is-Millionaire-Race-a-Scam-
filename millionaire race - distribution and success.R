@@ -19,3 +19,13 @@ for (i in 1:18) {
 
 data_frame <- data.frame("Room" = 1:19, "Independent Room Failure" = fail, "Distribution of Room Failure" = round(fail_at_room, 10), "Room Success" = round(success_at_room, 10), check.names = F)
 
+data <- c(2, 2, 5, 3, 5, 3, 6, 8, 3, 8, 5, 5, 6, 4, 6, 4, 2, 7, 6, 8, 6, 5, 7, 4, 5, 2, 10, 6, 7, 4, 2, 4, 3, 6, 3, 9, 8, 3, 5, 8, 6) # which room i failed at, n = 41
+table_data <- unname(table(data))
+
+observed <- c(0, table_data, rep(0, 9))
+
+expected <- round(fail_at_room, 10) * 41
+
+chisq_value <- sum((observed - expected)^2 / expected)
+
+p_value <- pchisq(chisq_value, 40, lower.tail = F)
