@@ -1,5 +1,7 @@
-fail <- c(seq(0.05, 0.5, by = 0.05), rep(0.5, 9))# independent room probabilities of failure
+fail <- c(seq(0.05, 0.5, by = 0.05), rep(0.5, 9)) # independent room probabilities of failure
+
 succeed <- 1 - fail # independent room probabilities of success
+
 fail_at_room <- numeric(19)
 fail_at_room[1] <- 0.05
 for (i in 1:18) {
